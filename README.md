@@ -1,3 +1,9 @@
+# Logdemons modified CellReg
+Replace the registration method with the logdemons, same as used in [MIN1PIPE](https://github.com/JinghaoLu/MIN1PIPE). 
+By Jinghao Lu
+
+---
+
 # Cell registration across multiple sessions in large-scale calcium imaging data
 This package is an implementation of a probabilistic approach for tracking the same neurons (cell registration) across multiple sessions 
 in Ca2+ imaging data. The package includes a GUI that supports the entire registration procedure. 
