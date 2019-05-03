@@ -2,7 +2,7 @@ function all_struct = cellreg_logdemons(roiall)
 % Jinghao Lu modified, 01/30/2019
 %   Using logdemons to register
 %   Input:
-%     roiall: cell structure, with each contains all ROIs from a session,
+%     roiall: cell structure of 1 X num_sessions, with each contains all ROIs from a session,
 %     with size of num X hight X width
 %   Output:
 %     all_struct: containing ROI correspondance and corrected footprints
