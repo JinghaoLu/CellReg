@@ -34,7 +34,12 @@ end
 pdf_betamixture = @(x,p,A1,A2,B1,B2) ...
     p*lognpdf(x,A1,B1) + (1-p)*betapdf(x,A2,B2);
 phat_same=lognfit(1-neighbors_spatial_correlations(neighbors_spatial_correlations>=0.7));
-phat_diff=betafit(neighbors_spatial_correlations(neighbors_spatial_correlations<0.7));
+tt = neighbors_spatial_correlations(neighbors_spatial_correlations<0.7);
+if length(unique(tt)) < 4
+    [~, idt] = sort(neighbors_spatial_correlations);
+    tt = neighbors_spatial_correlations(idt(1: 4));
+end
+phat_diff=betafit(tt);
 pinitial_parameters=0.5;
 Ainitial_parameters=[phat_same(1) phat_diff(1)];
 Binitial_parameters=[phat_same(2) phat_diff(2)];

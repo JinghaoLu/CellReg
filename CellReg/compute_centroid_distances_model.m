@@ -39,6 +39,9 @@ c_0=6;
 a_0=1;
 b_0=(centroid_distances_distribution(end)-centroid_distances_distribution(round(number_of_bins/2)))/(microns_per_pixel*(centroid_distances_centers(end)-centroid_distances_centers(round(number_of_bins/2))));
 b_0=b_0/(1-p_0);
+if isnan(b_0)
+    b_0 = 0;
+end
 initial_parameters=[p_0 parmhat a_0 c_0 b_0];
 F = @(x,xdata)...
     x(1)*(1./(xdata.*x(3).*sqrt(2*pi)).*exp(-(log(xdata)-x(2)).^2./(2*x(3)^2))...
